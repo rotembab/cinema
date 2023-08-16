@@ -1,14 +1,14 @@
 export default [
   {
-    display: "מה בקולנוע",
+    display: "What's new?",
     path: "/News",
   },
   {
-    display: "מבצעים ופעילויות",
+    display: "Sales & Activities",
     path: "/Sales",
   },
   {
-    display: "בלוג",
+    display: "Blog",
     path: "/Blog",
   },
   {
