@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between w-1/2">
           <BiSolidCameraMovie
             onClick={() => navigate("/")}
-            className="w-8 h-8 text-orange-500 transition ease-in-out duration-1000 hover:text-blue-500 hover:cursor-pointer"
+            className="w-8 h-8 text-orange-500 transition ease-in-out duration-700 hover:text-blue-500 hover:cursor-pointer"
           />
           <BiSolidUser className="text-white h-8 w-8" /> {/*  insert icon */}
           <AiOutlineSearch className="text-white h-8 w-8" />{" "}
@@ -31,7 +31,7 @@ export default function Navbar() {
       </div>
       <div className={`h-10  ${menu ? "hidden" : ""} md:hidden relative`}>
         <div className="absolute left-0 flex flex-row py-1">
-          <IoLocationSharp className="text-white w-7 h-7 hover:text-black" />
+          <IoLocationSharp className="text-white w-7 h-7 transition ease-in-out duration-1000 hover:text-black" />
           <div className="px-2">Choose my Cinema!</div>
         </div>
       </div>
