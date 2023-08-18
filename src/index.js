@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import NewsPage from "./Components/NewsPage";
+import NewsPage from "./Components/Pages/NewsPage";
+import SalesPage from "./Components/Pages/SalesPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/News",
     element: <NewsPage />,
+  },
+  {
+    path: "/Sales",
+    element: <SalesPage />,
   },
 ]);
 root.render(
