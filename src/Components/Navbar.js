@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between w-1/2">
           <BiSolidCameraMovie
             onClick={() => navigate("/")}
-            className="w-8 h-8 text-orange-500"
+            className="w-8 h-8 text-orange-500 transition ease-in-out duration-1000 hover:text-blue-500 hover:cursor-pointer"
           />
           <BiSolidUser className="text-white h-8 w-8" /> {/*  insert icon */}
           <AiOutlineSearch className="text-white h-8 w-8" />{" "}
