@@ -3,6 +3,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiSolidCameraMovie, BiSolidUser } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
+import { IoLocationSharp } from "react-icons/io5";
 import links from "../Literals/NavMenu";
 import { useNavigate } from "react-router-dom";
 
@@ -15,24 +16,29 @@ export default function Navbar() {
       <div className=" h-10 bg-black relative flex justify-end">
         <div
           onClick={() => setMenu(!menu)}
-          className={`absolute left-0 md:hidden cursor-pointer bg-orange-500 p-4`}>
-          <GiHamburgerMenu className="w-8 h-8" />
+          className={`absolute left-0 md:hidden cursor-pointer bg-orange-500 py-4 px-3`}>
+          <GiHamburgerMenu className="w-6 h-6" />
         </div>
         {/* Logo, my account,search */}
         <div className="flex justify-between w-1/2">
-          <BiSolidCameraMovie className="w-8 h-8 text-orange-500" />
+          <BiSolidCameraMovie
+            onClick={() => navigate("/")}
+            className="w-8 h-8 text-orange-500"
+          />
           <BiSolidUser className="text-white h-8 w-8" /> {/*  insert icon */}
           <AiOutlineSearch className="text-white h-8 w-8" />{" "}
         </div>
       </div>
-      <div className={`h-10 text-right ${menu ? "hidden" : ""}`}>
-        {" "}
-        Search for
+      <div className={`h-10  ${menu ? "hidden" : ""} md:hidden relative`}>
+        <div className="absolute left-0 flex flex-row py-1">
+          <IoLocationSharp className="text-white w-7 h-7 hover:text-black" />
+          <div className="px-2">Choose my Cinema!</div>
+        </div>
       </div>
       <div
         className={`flex md:flex-row-reverse flex-col md:justify-between ${
           menu ? "" : "hidden"
-        }`}>
+        } md:flex`}>
         {links.map((element, key) => (
           <button
             key={key}
