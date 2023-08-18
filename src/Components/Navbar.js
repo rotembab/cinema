@@ -43,7 +43,7 @@ export default function Navbar() {
           <button
             key={key}
             onClick={() => navigate(element.path)}
-            className="w-full h-max py-4 hover:text-white text-left pl-3">
+            className="w-full h-max pt-8 hover:text-white text-left pl-3">
             {element.display}
             <div className="border-b border-gray-800 w-[99%] m-auto opacity-50 md:border-0"></div>
           </button>
