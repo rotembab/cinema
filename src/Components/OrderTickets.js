@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 export default function OrderTickets() {
-  const [searchByTheater, setsearchByTheater] = useState(true); //false is for search by  movie
+  const [searchByTheater, setsearchByTheater] = useState(true);
+  //false is for search by movie
   return (
     <div className="p-4 w-full">
       <h2>Order Tickets</h2>
@@ -22,7 +23,18 @@ export default function OrderTickets() {
           By Movie
         </button>
       </div>
-      {/* search field */}
+      <div className="flex flex-col">
+        <select className={`${searchByTheater ? "hidden" : ""}`}>
+          <option disabled defaultValue={true}>
+            Select Movie
+          </option>
+        </select>
+        <select>
+          <option disabled defaultValue={true}>
+            Select Cinema Location
+          </option>
+        </select>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      {/* Add Image Carousel */}
       <OrderTickets />
     </div>
   );
