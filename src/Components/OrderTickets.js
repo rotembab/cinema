@@ -25,7 +25,7 @@ export default function OrderTickets() {
         </button>
       </div>
       <div className="flex flex-col">
-        {/* Retrive data from Sefver in insret it */}
+        {/* Retrive data from Server in insret it */}
         <Select
           placeholder="Select a Cinema location"
           isSearchable={true}
