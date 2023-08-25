@@ -8,5 +8,17 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".underline-orange": {
+          textDecoration: "underline",
+          textDecorationColor: "orange",
+        },
+        // Add more custom underline colors as needed
+      };
+
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };
