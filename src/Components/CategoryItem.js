@@ -8,7 +8,7 @@ export default function CategoryItem({ href, src, alt, name }) {
       <div className="w-[163px] h-[242px]">
         <img src={src} alt={alt} />
       </div>
-      <p className="hover:underline-orange-500">{name}</p>
+      <p className="hover:underline-orange text-white">{name}</p>
     </a>
   );
 }
