@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Select from "react-select";
 
 export default function OrderTickets() {
   const [searchByTheater, setsearchByTheater] = useState(true);
@@ -24,16 +25,13 @@ export default function OrderTickets() {
         </button>
       </div>
       <div className="flex flex-col">
-        <select className={`${searchByTheater ? "hidden" : ""}`}>
-          <option disabled defaultValue={true}>
-            Select Movie
-          </option>
-        </select>
-        <select>
-          <option disabled defaultValue={true}>
-            Select Cinema Location
-          </option>
-        </select>
+        {/* Retrive data from Sefver in insret it */}
+        <Select
+          placeholder="Select a Cinema location"
+          isSearchable={true}
+          className={`${searchByTheater ? "hidden" : ""}`}
+        />
+        <Select className="" isSearchable={true} placeholder="Select a movie" />
       </div>
     </div>
   );
