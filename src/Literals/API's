@@ -1,0 +1,4 @@
+export const Api = {
+  Movies: "localhost:8000/api/movies",
+  Users: "localhost:8000/api/users",
+};

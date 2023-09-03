@@ -3,8 +3,20 @@ import OrderTickets from "./Components/OrderTickets";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Category from "./Components/Category";
+import axios from "axios";
+import { Api } from "./Literals/API's";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const fetchMovies = async () => {
+    const response = await axios.get(Api.Movies);
+    setMovies(response.data);
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
   return (
     <div>
       <Navbar />
