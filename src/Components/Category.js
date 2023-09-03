@@ -2,7 +2,6 @@ import React from "react";
 import CategoryItem from "./CategoryItem";
 
 export default function Category({ headline, items }) {
-  //props will get a headline and  an array full of movies
   return (
     <div>
       <h3 className="">{headline}</h3>
