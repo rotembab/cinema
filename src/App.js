@@ -4,13 +4,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Category from "./Components/Category";
 import axios from "axios";
-import { Api } from "./Literals/API's";
+import Apis from "./Literals/Apis";
+import { useState, useEffect } from "react";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const fetchMovies = async () => {
-    const response = await axios.get(Api.Movies);
-    setMovies(response.data);
+    try {
+      const response = await axios.get(Apis.Movies);
+      setMovies(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
@@ -33,17 +38,7 @@ function App() {
       </Carousel>
       <OrderTickets />
 
-      <Category
-        headline={"Now in theaters"}
-        items={[
-          {
-            name: "Blue Beetle",
-            src: "",
-            alt: "Blue beetle",
-            href: "/Movies/123",
-          },
-        ]}
-      />
+      <Category headline={"Now in theaters"} items={movies} />
     </div>
   );
 }
