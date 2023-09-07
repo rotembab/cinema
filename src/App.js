@@ -35,7 +35,7 @@ function App() {
     <div>
       <Navbar />
       {/* Retrieve Images from DB */}
-      <Carousel autoPlay={true}>
+      <Carousel className="bg-black" autoPlay={true}>
         {news.map((item, key) => (
           <div>
             <img key={key} src={item.imgSrc} />
