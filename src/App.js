@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [news, setNews] = useState([]);
   const fetchMovies = async () => {
     try {
       const response = await axios.get(Apis.Movies);
@@ -17,9 +18,17 @@ function App() {
       console.error(error);
     }
   };
-
+  const fetchNews = async () => {
+    try {
+      const response = await axios.get(Apis.News);
+      setNews(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
     fetchMovies();
+    fetchNews();
   }, []);
 
   return (
@@ -27,14 +36,12 @@ function App() {
       <Navbar />
       {/* Retrieve Images from DB */}
       <Carousel autoPlay={true}>
-        <div>
-          <img src="assets/1.jpeg" />
-          <p className="legend">Legend 1</p>
-        </div>
-        <div>
-          <img src="assets/1.jpeg" />
-          <p className="legend">Legend 2</p>
-        </div>
+        {news.map((item, key) => (
+          <div>
+            <img key={key} src={item.imgSrc} />
+            <p className="legend">{item.heading}</p>
+          </div>
+        ))}
       </Carousel>
       <OrderTickets />
 
