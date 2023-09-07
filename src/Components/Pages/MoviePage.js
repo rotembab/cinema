@@ -6,26 +6,14 @@ import axios from "axios";
 import Apis from "../../Literals/Apis";
 
 export default function MoviePage() {
-  const [movieData, setMovieData] = useState({});
-
-  const params = useParams();
-  const fetchMovie = async () => {
-    try {
-      const resp = await axios.get(`${Apis.Movies}/${params.id}`);
-      setMovieData(resp.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchMovie();
-  }, []);
-
   return (
     <div>
       <Navbar />
-      <h1>{movieData.name}</h1>
+      <h1>{}</h1>
+
+      <button className="bg-orange-500 py-2 px-4 m-auto ">
+        Buy tickets now!
+      </button>
     </div>
   );
 }
