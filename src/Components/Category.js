@@ -3,7 +3,7 @@ import CategoryItem from "./CategoryItem";
 
 export default function Category({ headline, items }) {
   return (
-    <div>
+    <div className="bg-black text-white">
       <h3 className="">{headline}</h3>
       <div className="flex flex-row">
         {items.map((item, key) => {
